@@ -2,7 +2,7 @@ import unittest
 import tests.examples
 from src.unconstrained_min import *
 from src.utils import *
-
+import numpy as np
 
 class TestStringMethods(unittest.TestCase):
 
