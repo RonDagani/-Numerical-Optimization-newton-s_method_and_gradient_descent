@@ -1,0 +1,1 @@
+read pdf inside folders
