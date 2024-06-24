@@ -11,6 +11,8 @@ def wolfe(f, x, f_val, grad_val, direction, ineq_constraints, tau, max_iter=15):
     while iteration < max_iter and f(x + alpha * direction)[0] > f_val + Wolfe_condition_constant * alpha * grad_val.dot(direction):
         alpha *= backtracking_constant
         iteration += 1
+        if all([f(x + alpha * direction)[0]<0 for f in ineq_constraints]) or alpha == np.inf or abs(alpha - alpha/backtracking_constant)>10 ** -8:
+            break
 
     return alpha
 
